@@ -1,10 +1,14 @@
 package com.printarray;
 
-public class PrintArray<E> {
-    E[] myArray;
+public class PrintArray<X,Y,Z> {
+    X[] myXArray;
+    Y[] myYArray;
+    Z[] myZArray;
 
-    public PrintArray(E[] myArray) {
-        this.myArray = myArray;
+    public PrintArray(X[] myXArray, Y[] myYArray, Z[] myZArray) {
+        this.myXArray = myXArray;
+        this.myYArray = myYArray;
+        this.myZArray = myZArray;
     }
 
     public static void main(String[] args) {
@@ -12,13 +16,14 @@ public class PrintArray<E> {
         Double[] b = {1.1,2.2,3.3};
         Character[] c = {'a','b','c'};
 
-        new PrintArray<Integer>(a).toPrint();
-        new PrintArray<Double>(b).toPrint();
-        new PrintArray<Character>(c).toPrint();
+        new PrintArray<Integer,Double,Character>(a,b,c).toPrint();
+
     }
 
     private void toPrint() {
-        toPrint(myArray);
+        toPrint(myXArray);
+        toPrint(myYArray);
+        toPrint(myZArray);
     }
 
     private static<E> void toPrint(E[] a) {
